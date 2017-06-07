@@ -1,4 +1,4 @@
-<%= link_to("Back to Memes", "/memes") %> | <%= link_to("Edit", "/memes/#{@meme.id}/edit") %>
+<%= link_to("Back to Memes", "/memes") %> | <%= link_to("Edit", "/memes/#{@meme.id}/edit") %>  | <%= link_to("Delete", "/memes/#{@meme.id}", method: :delete, data: {confirm: "Are you sure you want to delete this hilarious meme?"})  %>
 
 <p><%= @meme.title %></p>
 <%= image_tag(@meme.url) %>

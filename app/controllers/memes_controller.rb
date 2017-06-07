@@ -34,6 +34,12 @@ class MemesController < ApplicationController
     end
   end
 
+  def destroy
+    @meme = Meme.find(params[:id])
+    @meme.destroy
+    redirect_to "/memes"
+  end
+
   def meme_params
     { title: params[:meme][:title], url: params[:meme][:url] }
   end
