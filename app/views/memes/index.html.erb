@@ -1,6 +1,7 @@
 <h1>Memes</h1>
+<%= link_to("New Meme", "/memes/new") %>
 
 <% @memes.each do |meme| %>
   <p><%= meme.title %></p>
-  <img src="<%= meme.url %>" alt="<%= meme.title %>">
+  <%= link_to(image_tag(meme.url), "/memes/#{meme.id}") %>
 <% end %>
