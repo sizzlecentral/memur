@@ -1,1 +1,6 @@
 <h1>Memes</h1>
+
+<% @memes.each do |meme| %>
+  <p><%= meme.title %></p>
+  <img src="<%= meme.url %>" alt="<%= meme.title %>">
+<% end %>
