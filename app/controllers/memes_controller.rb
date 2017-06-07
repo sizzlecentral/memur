@@ -13,7 +13,7 @@ class MemesController < ApplicationController
   end
 
   def create
-    @meme = Meme.new(picture_params)
+    @meme = Meme.new(meme_params)
     if @meme.save
       redirect_to "/memes"
     else
@@ -21,7 +21,20 @@ class MemesController < ApplicationController
     end
   end
 
-  def picture_params
+  def edit
+    @meme = Meme.find(params[:id])
+  end
+
+  def update
+    @meme = Meme.find(params[:id])
+    if @meme.update_attributes(meme_params)
+      redirect_to "/memes/#{@meme.id}"
+    else
+      render :edit
+    end
+  end
+
+  def meme_params
     { title: params[:meme][:title], url: params[:meme][:url] }
   end
 

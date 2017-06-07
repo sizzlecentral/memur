@@ -1,0 +1,19 @@
+<h1>Edit Meme</h1>
+
+<p>
+  <%= link_to("Back", "/memes/#{@meme.id}") %>
+</p>
+
+<%= form_for(@meme, url: "/memes/#{@meme.id}") do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

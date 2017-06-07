@@ -1,4 +1,4 @@
-<%= link_to("Back to Memes", "/memes") %>
+<%= link_to("Back to Memes", "/memes") %> | <%= link_to("Edit", "/memes/#{@meme.id}/edit") %>
 
 <p><%= @meme.title %></p>
 <%= image_tag(@meme.url) %>
