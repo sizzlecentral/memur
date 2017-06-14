@@ -12,5 +12,12 @@ class Meme < ApplicationRecord
     Meme.where("created_at < ?", time)
   end
 
+  def self.created_after(time)
+    Meme.where("created_at > ?", time)
+  end
+
+  def self.pictures_created_in_year(year)
+    Meme.where("created_at < ?", year)
+  end
 
 end

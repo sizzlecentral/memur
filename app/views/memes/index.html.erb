@@ -9,13 +9,27 @@
 <h1>Most recent memes</h1>
 <ul>
   <% @most_recent_memes.each do |meme| %>
-    <li><%= link_to meme.title, meme.url %></li>
+    <li><%= link_to meme.title, "/memes/#{meme.id}" %></li>
   <% end %>
 </ul>
 
-<h1>From last month</h1>
+<h1>From 2016</h1>
 <ul>
-  <% @older_than_month.each do |meme| %>
-    <li><%= link_to meme.title, meme.url %></li>
+  <% @created_in_year_2016.each do |meme| %>
+    <li><%= link_to meme.title, "/memes/#{meme.id}" %></li>
+  <% end %>
+</ul>
+
+<h1>From 2015</h1>
+<ul>
+  <% @created_in_year_2015.each do |meme| %>
+    <li><%= link_to meme.title, "/memes/#{meme.id}" %></li>
+  <% end %>
+</ul>
+
+<h1>From 2014</h1>
+<ul>
+  <% @created_in_year_2014.each do |meme| %>
+    <li><%= link_to meme.title, "/memes/#{meme.id}" %></li>
   <% end %>
 </ul>

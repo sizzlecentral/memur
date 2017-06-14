@@ -4,6 +4,9 @@ class MemesController < ApplicationController
     @memes = Meme.all
     @most_recent_memes = Meme.most_recent_five
     @older_than_month = Meme.created_before(1.month.ago)
+    @created_in_year_2016 = Meme.created_before(Date.new(2017)).created_after(Date.new(2016))
+    @created_in_year_2015 = Meme.created_before(Date.new(2016)).created_after(Date.new(2015))
+    @created_in_year_2014 = Meme.created_before(Date.new(2015)).created_after(Date.new(2014))
   end
 
   def show
