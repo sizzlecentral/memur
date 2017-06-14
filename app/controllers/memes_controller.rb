@@ -2,6 +2,8 @@ class MemesController < ApplicationController
 
   def index
     @memes = Meme.all
+    @most_recent_memes = Meme.most_recent_five
+    @older_than_month = Meme.created_before(1.month.ago)
   end
 
   def show

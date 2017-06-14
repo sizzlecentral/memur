@@ -5,3 +5,17 @@
   <p>Title: <%= meme.title %></p>
   <%= link_to(image_tag(meme.url), "/memes/#{meme.id}") %>
 <% end %>
+
+<h1>Most recent memes</h1>
+<ul>
+  <% @most_recent_memes.each do |meme| %>
+    <li><%= link_to meme.title, meme.url %></li>
+  <% end %>
+</ul>
+
+<h1>From last month</h1>
+<ul>
+  <% @older_than_month.each do |meme| %>
+    <li><%= link_to meme.title, meme.url %></li>
+  <% end %>
+</ul>
