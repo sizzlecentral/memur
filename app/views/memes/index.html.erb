@@ -1,5 +1,16 @@
 <h1>Memur</h1>
+<div class="user-account">
+  <%= link_to("Register", "/users/new") %>
+</div>
 <%= link_to("Add a New Meme", "/memes/new") %>
+
+<% if flash.any? %>
+  <% flash.each do |key, value| %>
+    <h3 class="<%= key %>">
+      <%= value %>
+    </h3>
+  <% end %>
+<% end %>
 
 <% @memes.each do |meme| %>
   <p>Title: <%= meme.title %></p>
